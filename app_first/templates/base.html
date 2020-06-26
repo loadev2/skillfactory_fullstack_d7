@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>D6.11</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static '/css/bootstrap.min.css' %}">
+</head>
+<body>
+<header class="text-right pr-3">
+    {% if username %}
+    <h1>Привет, {{ username }}!</h1>
+	<p><a href="/logout">Logout</a></p>
+    {% else %}
+        <p><a href="/login">Login</a></p>
+    {% endif %}
+
+</header>
+<main>
+        {% block content %}
+        {% endblock %}
+</main>
+<footer></footer>
+</body>
+</html>

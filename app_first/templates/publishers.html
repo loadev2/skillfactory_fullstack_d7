@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% if username %}
+<div class="ml-3 mt-3">
+    <h1>{{title}}</h1>
+        <div>
+        {% for item in publishers %}
+            <div class="mt-3">
+                <h2>{{item.ptitle}}</h2>
+                <ul class="list-group list-group-horizontal">
+                {% for book in item.books %}
+                    <li class="list-group-item">{{ book.title }}</li>
+                {% endfor %}
+            </div>
+
+        {% endfor %}
+        </div>
+</div>
+{% endif %}
+{% endblock %}
